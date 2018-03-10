@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6OP-nm-7oo" userLabel="Video Play View" customClass="ClyVideoPlayView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_media_default" translatesAutoresizingMaskIntoConstraints="NO" id="TgJ-SU-90z" userLabel="image view">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="VnF-uh-yih" appends="YES" id="Sd9-s9-Zxq"/>
+                    </connections>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hM-Nq-weR" userLabel="Tool View">
+                    <rect key="frame" x="0.0" y="140" width="375" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xw0-L3-RpM" userLabel="play or pause btn">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="gt2-VY-JFg"/>
+                            </constraints>
+                            <state key="normal" image="full_play_btn_hl"/>
+                            <connections>
+                                <action selector="playOrPause:" destination="6OP-nm-7oo" eventType="touchUpInside" id="Imu-S8-rzf"/>
+                            </connections>
+                        </button>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1aT-Ot-jj3" userLabel="Progress Slider">
+                            <rect key="frame" x="46" y="5" width="200" height="31"/>
+                            <connections>
+                                <action selector="slider" destination="6OP-nm-7oo" eventType="touchUpInside" id="tKo-eV-a2n"/>
+                                <action selector="sliderValueChange" destination="6OP-nm-7oo" eventType="valueChanged" id="BCg-4c-M4Y"/>
+                                <action selector="startSlider" destination="6OP-nm-7oo" eventType="touchDown" id="2Qr-En-4wF"/>
+                            </connections>
+                        </slider>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdj-vf-Vt1">
+                            <rect key="frame" x="335" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="ziw-yr-3DB"/>
+                            </constraints>
+                            <state key="normal" image="player_fullscreen"/>
+                            <connections>
+                                <action selector="switchOrientation:" destination="6OP-nm-7oo" eventType="touchUpInside" id="eXH-BO-tRi"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02:10/04:10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUS-VX-m8z" userLabel="TimeLabel">
+                            <rect key="frame" x="252" y="10" width="75" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="ieG-o7-2wC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="xw0-L3-RpM" firstAttribute="leading" secondItem="6hM-Nq-weR" secondAttribute="leading" id="6RD-tt-J0M"/>
+                        <constraint firstItem="xw0-L3-RpM" firstAttribute="top" secondItem="Jdj-vf-Vt1" secondAttribute="top" id="B1d-JZ-V2P"/>
+                        <constraint firstItem="Jdj-vf-Vt1" firstAttribute="leading" secondItem="cUS-VX-m8z" secondAttribute="trailing" constant="8" symbolic="YES" id="Eu2-Xt-pw3"/>
+                        <constraint firstItem="cUS-VX-m8z" firstAttribute="leading" secondItem="1aT-Ot-jj3" secondAttribute="trailing" constant="8" symbolic="YES" id="LU5-UO-dIy"/>
+                        <constraint firstAttribute="bottom" secondItem="xw0-L3-RpM" secondAttribute="bottom" id="LaA-4m-xhu"/>
+                        <constraint firstItem="xw0-L3-RpM" firstAttribute="centerY" secondItem="1aT-Ot-jj3" secondAttribute="centerY" id="QPk-ch-ONC"/>
+                        <constraint firstItem="1aT-Ot-jj3" firstAttribute="leading" secondItem="xw0-L3-RpM" secondAttribute="trailing" constant="8" symbolic="YES" id="Qbc-0r-mA7"/>
+                        <constraint firstItem="cUS-VX-m8z" firstAttribute="centerY" secondItem="Jdj-vf-Vt1" secondAttribute="centerY" id="Qdq-dS-Ccz"/>
+                        <constraint firstItem="cUS-VX-m8z" firstAttribute="top" secondItem="6hM-Nq-weR" secondAttribute="top" constant="10" id="S6f-Ek-Q8f"/>
+                        <constraint firstItem="xw0-L3-RpM" firstAttribute="top" secondItem="6hM-Nq-weR" secondAttribute="top" id="r7e-pE-uUG"/>
+                        <constraint firstAttribute="trailing" secondItem="Jdj-vf-Vt1" secondAttribute="trailing" id="rW7-ZI-4dS"/>
+                        <constraint firstItem="xw0-L3-RpM" firstAttribute="bottom" secondItem="Jdj-vf-Vt1" secondAttribute="bottom" id="whl-Vg-cdV"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c2R-nl-dz1" userLabel="Progress View">
+                    <rect key="frame" x="169" y="72" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="TgJ-SU-90z" firstAttribute="trailing" secondItem="6hM-Nq-weR" secondAttribute="trailing" id="4yj-4s-bWJ"/>
+                <constraint firstItem="TgJ-SU-90z" firstAttribute="centerY" secondItem="c2R-nl-dz1" secondAttribute="centerY" id="6lZ-VN-5om"/>
+                <constraint firstAttribute="trailing" secondItem="TgJ-SU-90z" secondAttribute="trailing" id="8a7-Vf-lGP"/>
+                <constraint firstItem="c2R-nl-dz1" firstAttribute="centerX" secondItem="6hM-Nq-weR" secondAttribute="centerX" id="AKa-Wj-cJt"/>
+                <constraint firstItem="6hM-Nq-weR" firstAttribute="top" secondItem="c2R-nl-dz1" secondAttribute="bottom" constant="31" id="C2u-UT-uLf"/>
+                <constraint firstItem="TgJ-SU-90z" firstAttribute="top" secondItem="6OP-nm-7oo" secondAttribute="top" id="GMP-fA-jQN"/>
+                <constraint firstAttribute="bottom" secondItem="TgJ-SU-90z" secondAttribute="bottom" id="XNB-WF-eEO"/>
+                <constraint firstItem="TgJ-SU-90z" firstAttribute="leading" secondItem="6hM-Nq-weR" secondAttribute="leading" id="YFH-Cs-IMu"/>
+                <constraint firstItem="6hM-Nq-weR" firstAttribute="bottom" secondItem="TgJ-SU-90z" secondAttribute="bottom" id="haI-dL-gJG"/>
+                <constraint firstItem="TgJ-SU-90z" firstAttribute="leading" secondItem="6OP-nm-7oo" secondAttribute="leading" id="qe4-f1-Vxb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="TgJ-SU-90z" id="09Z-uO-Bmv"/>
+                <outlet property="playOrPauseBtn" destination="xw0-L3-RpM" id="Ku6-C9-d7C"/>
+                <outlet property="progressSlider" destination="1aT-Ot-jj3" id="8MX-1e-tid"/>
+                <outlet property="progressView" destination="c2R-nl-dz1" id="j9P-yg-EnQ"/>
+                <outlet property="timeLabel" destination="cUS-VX-m8z" id="IGt-6T-Vxh"/>
+                <outlet property="toolView" destination="6hM-Nq-weR" id="erf-f0-qaQ"/>
+            </connections>
+            <point key="canvasLocation" x="-44.5" y="12"/>
+        </view>
+        <tapGestureRecognizer id="VnF-uh-yih">
+            <connections>
+                <action selector="tapAction:" destination="6OP-nm-7oo" id="j7d-eO-NSy"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="bg_media_default" width="320" height="180"/>
+        <image name="full_play_btn_hl" width="50" height="50"/>
+        <image name="player_fullscreen" width="20" height="20"/>
+    </resources>
+</document>

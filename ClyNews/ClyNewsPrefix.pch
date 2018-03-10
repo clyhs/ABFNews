@@ -1,0 +1,29 @@
+//
+//  ClyNewsPrefix.pch
+//  ClyNews
+//
+//  Created by 陈立宇 on 16/12/29.
+//  Copyright © 2016年 陈立宇. All rights reserved.
+//
+
+#ifndef ClyNewsPrefix_pch
+#define ClyNewsPrefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIView+Frame.h"
+#import "UIView+Nib.h"
+#import "UIColor+Hex.h"
+#import "UILabel+ClyLabel.h"
+#import "UIImage+ClyImage.h"
+#import "ClyHeader.h"
+#import <MJExtension/MJExtension.h>
+#import "ClyHttpManager.h"
+#import <MJRefresh/MJRefresh.h>
+#import <UIImageView+WebCache.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <MAMapKit/MAMapKit.h>
+
+
+#endif /* ClyNewsPrefix_pch */

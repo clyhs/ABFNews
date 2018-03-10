@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="b5U-Zu-1lt" userLabel="Navigation Bar View" customClass="ClyNavigationBarView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5g-PD-ShD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naN-Cw-0pq" userLabel="BackBtn">
+                            <rect key="frame" x="0.0" y="14" width="55" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="55" id="qhT-Q3-zfh"/>
+                            </constraints>
+                            <state key="normal" image="back_bg"/>
+                            <connections>
+                                <action selector="navBack:" destination="b5U-Zu-1lt" eventType="touchUpInside" id="upc-Ln-c6f"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.18806472229999999" green="0.50879829489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="naN-Cw-0pq" firstAttribute="top" secondItem="a5g-PD-ShD" secondAttribute="top" constant="14" id="2Al-Kh-hRL"/>
+                        <constraint firstItem="naN-Cw-0pq" firstAttribute="leading" secondItem="a5g-PD-ShD" secondAttribute="leading" id="RVa-dY-uPt"/>
+                        <constraint firstAttribute="bottom" secondItem="naN-Cw-0pq" secondAttribute="bottom" id="yPU-tD-le7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.14876701719999999" green="0.48020840619999999" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="a5g-PD-ShD" firstAttribute="leading" secondItem="b5U-Zu-1lt" secondAttribute="leading" id="81r-1n-KMs"/>
+                <constraint firstItem="a5g-PD-ShD" firstAttribute="top" secondItem="b5U-Zu-1lt" secondAttribute="top" id="kbv-MR-yoZ"/>
+                <constraint firstAttribute="trailing" secondItem="a5g-PD-ShD" secondAttribute="trailing" id="oOP-Dg-Kyn"/>
+                <constraint firstAttribute="bottom" secondItem="a5g-PD-ShD" secondAttribute="bottom" id="rtM-qo-0th"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backBtn" destination="naN-Cw-0pq" id="pwd-dD-YYB"/>
+                <outlet property="backgroundView" destination="a5g-PD-ShD" id="r9q-fK-t58"/>
+            </connections>
+            <point key="canvasLocation" x="-3.5" y="-212"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_bg" width="18" height="13"/>
+    </resources>
+</document>
